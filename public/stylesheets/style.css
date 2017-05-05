@@ -1,0 +1,240 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: arial;
+  color: black; }
+
+.App {
+  width: 300px;
+  height: 500px;
+  margin: 0 auto; }
+  .App .LoadScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: black; }
+    .App .LoadScreen .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 4; }
+      .App .LoadScreen .logo .logo-image {
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        background: url(../images/react-white-logo.png) no-repeat;
+        background-size: 100% 100%;
+        animation: spin 10s infinite linear; }
+
+@keyframes spin {
+  form {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+    .App .LoadScreen .load-text {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      color: white;
+      justify-content: flex-start;
+      align-items: center; }
+  .App .MainScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+    .App .MainScreen .Toolbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      padding: 5%;
+      background-color: #333333; }
+      .App .MainScreen .Toolbar .button-menu {
+        background-color: #333333;
+        border: none;
+        cursor: pointer; }
+        .App .MainScreen .Toolbar .button-menu hr {
+          width: 30px;
+          margin-bottom: 5px;
+          border-color: white;
+          border-radius: 50px;
+          height: 2px;
+          background-color: white; }
+          .App .MainScreen .Toolbar .button-menu hr:last-child {
+            margin: none; }
+      .App .MainScreen .Toolbar .toolbar-caption {
+        color: white;
+        align-self: flex-end; }
+      .App .MainScreen .Toolbar .button-filter {
+        background: url(../images/sieve.png) no-repeat;
+        background-size: 100% 100%;
+        width: 20px;
+        height: 20px;
+        border: none;
+        position: relative;
+        transform: rotate(45deg);
+        cursor: pointer; }
+    .App .MainScreen .MainMenu {
+      position: absolute;
+      width: 110%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3); }
+      .App .MainScreen .MainMenu .menu-block {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+        background-color: #333333;
+        position: relative;
+        /* justify-content: flex-start;
+				align-items: center; */ }
+        .App .MainScreen .MainMenu .menu-block .menu-close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 10px;
+          font-size: 150%;
+          transform: rotate(90deg);
+          cursor: pointer;
+          color: white; }
+        .App .MainScreen .MainMenu .menu-block .menu-content {
+          display: flex;
+          flex-direction: column;
+          height: 200px; }
+          .App .MainScreen .MainMenu .menu-block .menu-content .menu-image {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            margin-top: 50px;
+            background: url(../images/react-white-logo.png) no-repeat;
+            background-size: 100% 100%; }
+          .App .MainScreen .MainMenu .menu-block .menu-content .menu-username {
+            color: white;
+            padding-left: 20px; }
+        .App .MainScreen .MainMenu .menu-block .menu-actions {
+          padding: 20px; }
+          .App .MainScreen .MainMenu .menu-block .menu-actions .field-changename {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #4d4d4d; }
+            .App .MainScreen .MainMenu .menu-block .menu-actions .field-changename input {
+              width: 100%;
+              border: none;
+              background-color: #4d4d4d;
+              color: white; }
+    .App .MainScreen .FilterMenu {
+      position: absolute;
+      width: 110%;
+      height: 100%;
+      padding: 30px;
+      background-color: #333333; }
+      .App .MainScreen .FilterMenu .filter-nav-container {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; }
+        .App .MainScreen .FilterMenu .filter-nav-container .filter-back-button {
+          width: 20px;
+          height: 20px;
+          border: 5px solid white;
+          border-top: none;
+          border-right: none;
+          border-radius: 3px 0px;
+          cursor: pointer;
+          transform: rotate(45deg); }
+          .App .MainScreen .FilterMenu .filter-nav-container .filter-back-button:active {
+            opacity: 0.5; }
+      .App .MainScreen .FilterMenu .filter-list ul {
+        list-style: none; }
+        .App .MainScreen .FilterMenu .filter-list ul > li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 10px;
+          cursor: pointer; }
+          .App .MainScreen .FilterMenu .filter-list ul > li .filter-radio-button {
+            display: flex;
+            width: 15px;
+            height: 15px;
+            border-radius: 50px;
+            margin-right: 10px;
+            background-color: white; }
+            .App .MainScreen .FilterMenu .filter-list ul > li .filter-radio-button .filter-radio {
+              width: 80%;
+              height: 80%;
+              border-radius: 50px;
+              background-color: #5fcaff;
+              margin: auto; }
+          .App .MainScreen .FilterMenu .filter-list ul > li .filter-content {
+            color: white; }
+          .App .MainScreen .FilterMenu .filter-list ul > li:last-child {
+            margin: none; }
+    .App .MainScreen .List {
+      background-color: #e6e6e6;
+      padding: 20px;
+      overflow-y: auto; }
+      .App .MainScreen .List ul {
+        list-style: none; }
+        .App .MainScreen .List ul > li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 10px;
+          cursor: pointer;
+          background-color: white;
+          border-radius: 100px 0 0 100px; }
+          .App .MainScreen .List ul > li .list-item-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            border-radius: 100px;
+            box-shadow: 0px 0px 3px; }
+          .App .MainScreen .List ul > li .list-item-content {
+            font-size: 80%;
+            font-weight: bolder; }
+    .App .MainScreen .ReviewsToast {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3); }
+      .App .MainScreen .ReviewsToast .reviews-block-wrapper {
+        display: flex;
+        /* 
+					wrapper нужен для того, чтобы выставить dispal: flex,
+					для удобного управления расположением block;
+					position: absolute - всегда высталяет display: block.
+				*/
+        width: 100%;
+        height: 100%; }
+        .App .MainScreen .ReviewsToast .reviews-block-wrapper .reviews-block {
+          border-radius: 10px;
+          padding: 20px;
+          padding-top: 30px;
+          background-color: white;
+          margin: auto;
+          position: relative; }
+          .App .MainScreen .ReviewsToast .reviews-block-wrapper .reviews-block .close-reviews {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 120%;
+            opacity: 0.5; }
+            .App .MainScreen .ReviewsToast .reviews-block-wrapper .reviews-block .close-reviews:active {
+              opacity: 0.1; }
+          .App .MainScreen .ReviewsToast .reviews-block-wrapper .reviews-block ul {
+            list-style: none;
+            margin-top: 10px; }
+            .App .MainScreen .ReviewsToast .reviews-block-wrapper .reviews-block ul li {
+              font-size: 80%;
+              margin-bottom: 5px; }
+
+/*# sourceMappingURL=style.css.map*/
